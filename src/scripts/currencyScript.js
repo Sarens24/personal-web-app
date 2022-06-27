@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-import { API_KEY } from '../../private.js'
+const API_KEY = 'cd8eaa5befmsh06589e7ae638e2ap1a2478jsn1358b6cc67bb'
 
 async function getCurrencies() {
     const request = {
