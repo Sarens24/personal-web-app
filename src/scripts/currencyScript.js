@@ -1,6 +1,7 @@
 const axios = require("axios");
+require("dotenv").config();
 
-const API_KEY = 'cd8eaa5befmsh06589e7ae638e2ap1a2478jsn1358b6cc67bb'
+const API_KEY = process.env.API_KEY
 
 async function getCurrencies() {
     const request = {
