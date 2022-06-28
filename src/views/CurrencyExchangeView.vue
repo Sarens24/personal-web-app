@@ -59,7 +59,6 @@
 
 <script>
 
-const axios = require("axios");
 import { getRate, getCurrencies } from '../scripts/currencyScript.js'
 
 export default {
