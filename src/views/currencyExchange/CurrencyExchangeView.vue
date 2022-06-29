@@ -52,6 +52,16 @@
             <h1 class="font-weight-bold pt-4">{{ result }} {{ toCurrency }}</h1>
           </v-card-text>
         </div>
+        <v-col class="d-flex justify-end">
+          <v-btn
+            outlined
+            color="primary"
+            @click="goToSource()"
+          >
+            Source
+          </v-btn>
+        </v-col>
+
       </v-card>
     </v-container>
   </div>
@@ -95,6 +105,10 @@ export default {
           this.result = "NOT AVAILABLE"
         this.clicked=true;
 
+    },
+
+    goToSource() {
+      window.open("https://github.com/Sarens24/personal-web-app/tree/master/src/views/currencyExchange");
     },
 
     async swapCurrencies() {

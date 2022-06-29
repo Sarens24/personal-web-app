@@ -1,14 +1,24 @@
 <template>
     <v-container>
         <v-col cols="12">
-            <v-row>
+            <v-row class="d-flex justify-end">
                 <v-col cols="6">
                 </v-col>
-                <v-col cols="6" class="text-center">
+                <v-col cols="6">
                     <h1>Snake Game</h1>
                     <canvas id="gameCanvas" width="500" height="500"></canvas>
-                    <v-btn v-if="first" x-large text color="secondary" @click="startGame(); first=false">Start</v-btn>
-                    <v-btn v-else x-large text color="secondary" @click="gameOver=false;startGame()">Restart</v-btn>
+                    <v-col class="text-center">
+                        <v-btn v-if="first" x-large text color="secondary" @click="startGame(); first=false">Start</v-btn>
+                        <v-btn v-else x-large text color="secondary" @click="gameOver=false;startGame()">Restart</v-btn>
+                    </v-col>
+                    <v-col>
+                        <v-btn
+                            outlined
+                            @click="goToSource()"
+                        >
+                            Source
+                        </v-btn>
+                    </v-col>
                 </v-col>
             </v-row>
         </v-col>
@@ -84,6 +94,10 @@
     },
 
     methods: {
+        goToSource() {
+            window.open("https://github.com/Sarens24/personal-web-app/tree/master/src/views/snakeGame")
+        },
+
         startGame() {
             this.snake = [
                 {x: 250, y: 250},
