@@ -2,9 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Projects from '../views/ProjectsView.vue'
-import CurrencyExchange from '../views/CurrencyExchangeView.vue'
+import CurrencyExchange from '../views/currencyExchange/CurrencyExchangeView.vue'
 import AspenSpas from '../views/AspenSpasView.vue'
-import SnakeGame from '../views/SnakeGameView.vue'
+import SnakeGame from '../views/snakeGame/SnakeGameView.vue'
 import AboutMe from '../views/AboutMeView.vue'
 
 Vue.use(VueRouter)

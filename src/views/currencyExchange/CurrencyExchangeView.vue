@@ -59,7 +59,7 @@
 
 <script>
 
-import { getRate, getCurrencies } from '../scripts/currencyScript.js'
+import { getRate, getCurrencies } from './currencyScript.js'
 
 export default {
   name: 'CurrencyExchangeView',
