@@ -93,7 +93,7 @@
 
     methods: {
         goToSource() {
-            window.open("https://github.com/Sarens24/personal-web-app/tree/master/src/views/snakeGame")
+            window.open("https://github.com/Sarens24/personal-web-app/blob/master/src/views/snakeGame/SnakeGameView.vue")
         },
 
         startGame() {

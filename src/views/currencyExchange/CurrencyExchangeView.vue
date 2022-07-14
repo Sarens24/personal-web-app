@@ -52,7 +52,7 @@
             <h1 class="font-weight-bold pt-4">{{ result }} {{ toCurrency }}</h1>
           </v-card-text>
         </div>
-        <v-col class="d-flex justify-end">
+        <v-col>
           <v-btn
             outlined
             color="primary"
