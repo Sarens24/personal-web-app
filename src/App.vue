@@ -65,8 +65,7 @@ export default {
 
 <style>
 #app {
-  background: url('../public/background.jpeg')
-    no-repeat center center fixed;
+  background-color: floralwhite;
   background-size: cover;
   background-position: 0px -200px; 
 }

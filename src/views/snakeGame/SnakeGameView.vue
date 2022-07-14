@@ -1,17 +1,15 @@
 <template>
-    <v-container>
-        <v-col cols="12">
-            <v-row class="d-flex justify-end">
-                <v-col cols="6">
-                </v-col>
-                <v-col cols="6">
+    <v-container class="d-flex justify-center">
+        <v-col cols="6">
+            <v-row>
+                <v-col cols="12" class="text-center">
                     <h1>Snake Game</h1>
                     <canvas id="gameCanvas" width="500" height="500"></canvas>
                     <v-col class="text-center">
                         <v-btn v-if="first" x-large text color="secondary" @click="startGame(); first=false">Start</v-btn>
                         <v-btn v-else x-large text color="secondary" @click="gameOver=false;startGame()">Restart</v-btn>
                     </v-col>
-                    <v-col>
+                    <v-col class="text-left pl-7">
                         <v-btn
                             outlined
                             @click="goToSource()"

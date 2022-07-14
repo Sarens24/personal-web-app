@@ -2,9 +2,7 @@
     <v-container class="d-flex justify-center">
         <v-col cols="12"> 
             <v-row>
-                <v-col cols="4">
-                </v-col>
-                <v-col cols="4" class="text-center">
+                <v-col cols="6" class="text-center">
                     <v-hover>
                         <template v-slot="{ hover }">
                             <v-card class="rounded-lg" hover color="transparent">
@@ -26,7 +24,7 @@
                     </v-hover>
                     <h3 class="pt-2">Sign In</h3>
                 </v-col>
-                <v-col cols="4" class="text-center"> 
+                <v-col cols="6" class="text-center"> 
                     <v-hover>
                         <template v-slot="{ hover }">
                             <v-card class="rounded-lg" hover color="transparent">
@@ -50,9 +48,7 @@
                 </v-col>
             </v-row>
             <v-row>
-                <v-col cols="4">
-                </v-col>
-                <v-col cols="4" class="text-center">
+                <v-col cols="6" class="text-center">
                     <v-hover>
                         <template v-slot="{ hover }">
                             <v-card class="rounded-lg" hover color="transparent">
@@ -74,7 +70,7 @@
                     </v-hover>
                     <h3 class="pt-2">Production Status</h3>
                 </v-col>
-                <v-col cols="4" class="text-center">
+                <v-col cols="6" class="text-center">
                     <v-hover>
                         <template v-slot="{ hover }">
                             <v-card class="rounded-lg" hover color="transparent">
@@ -98,7 +94,6 @@
                 </v-col>
             </v-row>
             <v-row class="pt-4">
-                <v-col cols="4"></v-col>
                 <h5>*The code for this project is private</h5>
             </v-row>
         </v-col>

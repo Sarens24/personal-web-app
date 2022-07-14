@@ -2,9 +2,7 @@
     <v-container>
         <v-col cols="12"> 
             <v-row>
-                <v-col cols="4">
-                </v-col>
-                <v-col cols="4" class="text-center">
+                <v-col cols="6" class="text-center">
                     <v-card @click="goToExchange()" hover class="rounded-lg d-flex" color="transparent">
                         <v-img
                             height="250"
@@ -14,7 +12,7 @@
                     </v-card>
                     <h3 class="pt-2">Currency Exchange</h3>
                 </v-col>
-                <v-col cols="4" class="text-center"> 
+                <v-col cols="6" class="text-center"> 
                     <v-card @click="goToSnake()" hover class="rounded-lg" color="transparent">
                         <v-img
                             height="250"
@@ -26,9 +24,7 @@
                 </v-col>
             </v-row>
             <v-row>
-                <v-col cols="4">
-                </v-col>
-                <v-col cols="8" class="text-center">
+                <v-col cols="12" class="text-center">
                     <v-card @click="goToAspen()" hover class="rounded-lg">
                         <v-img
                             height="250"
