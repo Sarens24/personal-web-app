@@ -24,7 +24,18 @@
                 </v-col>
             </v-row>
             <v-row>
-                <v-col cols="12" class="text-center">
+                <v-col cols="6" class="text-center">
+                    <v-card @click="goToWiki()" hover class="rounded-lg">
+                        <v-img
+                            height="250"
+                            contain
+                            src="../../public/wiki-logo.webp"
+                        >
+                        </v-img>
+                    </v-card>
+                    <h3 class="pt-2">Wikipedia Article Generator</h3>
+                </v-col>
+                <v-col cols="6" class="text-center">
                     <v-card @click="goToAspen()" hover class="rounded-lg">
                         <v-img
                             height="250"
@@ -58,6 +69,9 @@
         goToAspen() {
             this.$router.push('/aspenSpas');
         },
+        goToWiki() {
+            this.$router.push('/wikiGenerator');
+        }
     }
 
   }

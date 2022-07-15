@@ -5,6 +5,7 @@ import Projects from '../views/ProjectsView.vue'
 import CurrencyExchange from '../views/currencyExchange/CurrencyExchangeView.vue'
 import AspenSpas from '../views/AspenSpasView.vue'
 import SnakeGame from '../views/snakeGame/SnakeGameView.vue'
+import WikiGenerator from '../views/WikiGeneratorView.vue'
 import AboutMe from '../views/AboutMeView.vue'
 
 Vue.use(VueRouter)
@@ -30,6 +31,10 @@ const routes = [
   {
     path: '/snakeGame',
     component: SnakeGame
+  },
+  {
+    path: '/wikiGenerator',
+    component: WikiGenerator
   },
   {
     path: '/aboutMe',
