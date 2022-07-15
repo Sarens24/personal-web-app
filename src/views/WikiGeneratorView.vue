@@ -5,9 +5,9 @@
                 <v-card-title class="text-h4 font-weight-bold">
                     Random Wikipedia Article Generator
                 </v-card-title>
-                <v-card-content>
+                <div>
                     <v-img src="../../public/wiki-generator-sc.png"></v-img>
-                </v-card-content>
+                </div>
                 <v-card-text class="text-center text-body-2">
                     This project uses python3 and BeautifulSoup to get a random wikipedia article and asks if you would like to view it. 
                     If 'Y', the article will be brought up in the browser. 
