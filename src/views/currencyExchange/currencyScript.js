@@ -1,6 +1,7 @@
 const axios = require("axios");
 require('dotenv').config()
 
+//get all available currencies
 async function getCurrencies() {
     const request = {
         method: 'GET',
@@ -20,6 +21,7 @@ async function getCurrencies() {
     };
 }
 
+//get exchange rate between two currencies
 async function getRate(toCurrency, fromCurrency) {
     const request = {
         method: 'GET',
