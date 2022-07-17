@@ -4,16 +4,17 @@ require('dotenv').config()
 async function getCurrencies() {
     const request = {
         method: 'GET',
-        url: 'https://currency-converter13.p.rapidapi.com/list',
-        headers: {
-            'X-RapidAPI-Key': process.env.VUE_APP_API_KEY,
-            'X-RapidAPI-Host': 'currency-converter13.p.rapidapi.com'
-        }
+        url: 'https://api.currencyapi.com/v3/currencies',
+        params: {apikey: process.env.VUE_APP_API_KEY}
+        // headers: {
+        //     'X-RapidAPI-Key': process.env.VUE_APP_API_KEY,
+        //     'X-RapidAPI-Host': 'currency-converter13.p.rapidapi.com'
+        // }
     };
 
     try {
         let response = await axios.request(request)
-        return response.data
+        return response.data.data
     } catch(error) {
         console.error(error);
     };
@@ -22,17 +23,16 @@ async function getCurrencies() {
 async function getRate(toCurrency, fromCurrency) {
     const request = {
         method: 'GET',
-        url: 'https://currency-converter13.p.rapidapi.com/convert',
-        params: {from: fromCurrency , to: toCurrency, amount: '1'},
-        headers: {
-            'X-RapidAPI-Key': process.env.VUE_APP_API_KEY,
-            'X-RapidAPI-Host': 'currency-converter13.p.rapidapi.com'
-        }
+        url: 'https://api.currencyapi.com/v3/latest',
+        params: {apikey: process.env.VUE_APP_API_KEY, base_currency: fromCurrency , currencies: toCurrency},
+        // headers: {
+        //     'X-RapidAPI-Key': process.env.VUE_APP_API_KEY,
+        // }
     }
 
     try {
         let response = await axios.request(request)
-        return response.data
+        return response.data.data
     } catch(error) {
         console.error(error);
     };
