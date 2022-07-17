@@ -78,7 +78,7 @@ export default {
     loader: null,
     loading: false,
     clicked: false,
-    currencies: null,
+    currencies: [],
     result: '',
     toCurrency: '',
     fromCurrency: '',
@@ -93,14 +93,16 @@ export default {
 
   mounted() {
     getCurrencies().then(response => {
-      this.currencies = response
+      response.forEach(a => this.currencies.push(a.symbol))
+      this.currencies.splice(1,1)
     })
   },
 
   methods:  {
     async submit() {
 
-        this.result = await getRate(this.toCurrency, this.fromCurrency);
+        this.result = await getRate(this.fromCurrency, this.toCurrency);
+        this.result = this.result.result.convertedAmount
         if (!this.result)
           this.result = "NOT AVAILABLE"
         this.clicked=true;
@@ -120,7 +122,8 @@ export default {
       let click = this.clicked;
       this.clicked = false;
   
-      this.result = await getRate(this.toCurrency, this.fromCurrency);
+      this.result = await getRate(this.fromCurrency, this.toCurrency);
+      this.result = this.result.result.convertedAmount
         if (!this.result)
           this.result = "NOT AVAILABLE"
 
