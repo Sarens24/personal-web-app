@@ -93,9 +93,7 @@ export default {
 
   mounted() {
     getCurrencies().then(response => {
-      console.log(response)
-      this.currencies = Object.keys(response)
-      console.log(this.currencies)
+      this.currencies = Object.keys(response.conversion_rates)
     })
   },
 
@@ -103,7 +101,7 @@ export default {
     async submit() {
 
         this.result = await getRate(this.toCurrency, this.fromCurrency);
-        this.result = Object.values(this.result)[0].value
+        this.result = this.result.conversion_rate
         if (!this.result)
           this.result = "NOT AVAILABLE"
         this.clicked=true;
@@ -124,9 +122,9 @@ export default {
       this.clicked = false;
   
       this.result = await getRate(this.toCurrency, this.fromCurrency);
-        this.result = Object.values(this.result)[0].value
-        if (!this.result)
-          this.result = "NOT AVAILABLE"
+      this.result = this.result.conversion_rate
+      if (!this.result)
+        this.result = "NOT AVAILABLE"
 
       if (click)
         this.clicked = true;

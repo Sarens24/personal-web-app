@@ -5,16 +5,16 @@ require('dotenv').config()
 async function getCurrencies() {
     const request = {
         method: 'GET',
-        url: 'https://api.currencyapi.com/v3/currencies',
+        url: `https://v6.exchangerate-api.com/v6/${process.env.VUE_APP_API_KEY}/latest/USD`,
         // params: {apikey: process.env.VUE_APP_API_KEY}
-        headers: {
-            'apikey': process.env.VUE_APP_API_KEY,
-        }
+        // headers: {
+        //     'apikey': process.env.VUE_APP_API_KEY,
+        // }
     };
 
     try {
         let response = await axios.request(request)
-        return response.data.data
+        return response.data
     } catch(error) {
         console.error(error);
     };
@@ -24,16 +24,16 @@ async function getCurrencies() {
 async function getRate(toCurrency, fromCurrency) {
     const request = {
         method: 'GET',
-        url: 'https://api.currencyapi.com/v3/latest',
-        params: {base_currency: fromCurrency , currencies: toCurrency},
-        headers: {
-            'apikey': process.env.VUE_APP_API_KEY,
-        }
+        url: `https://v6.exchangerate-api.com/v6/${process.env.VUE_APP_API_KEY}/pair/${fromCurrency}/${toCurrency}`,
+        // params: {base_currency: fromCurrency , currencies: toCurrency},
+        // headers: {
+        //     'apikey': process.env.VUE_APP_API_KEY,
+        // }
     }
 
     try {
         let response = await axios.request(request)
-        return response.data.data
+        return response.data
     } catch(error) {
         console.error(error);
     };
