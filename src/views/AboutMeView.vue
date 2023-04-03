@@ -47,7 +47,7 @@
 
     methods: {
         goToResume() {
-            window.open("https://drive.google.com/file/d/18PtCTVYj2WNQqjqgl3ipMTcU-PuULiyJ/view?usp=sharing");
+            window.open("https://drive.google.com/file/d/179VKECWzZUYur3m2LSDXwzS_K19Acpre/view?usp=sharing");
         }
     }
 
