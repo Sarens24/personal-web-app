@@ -7,7 +7,7 @@
                     <canvas id="gameCanvas" width="500" height="500"></canvas>
                     <v-col class="text-center">
                         <v-btn v-if="first" x-large text color="secondary" @click="startGame(); first=false">Start</v-btn>
-                        <v-btn v-else x-large text color="secondary" @click="gameOver=false;startGame()">Restart</v-btn>
+                        <v-btn v-else x-large text color="secondary" @click="first=true;gameOver=true;startGame()">Restart</v-btn>
                     </v-col>
                     <v-col class="text-left pl-7">
                         <v-btn
@@ -48,7 +48,8 @@
         dx: 10,
         dy: 0,
         foodX: 0,
-        foodY: 0
+        foodY: 0,
+        timeout: 0
 
     }),
 
@@ -84,7 +85,7 @@
         //this.advanceSnake()
         // Change vertical velocity to 
 
-        //this.main();
+        // this.main();
         // Draw snake on the canvas
         this.drawSnake();
         document.addEventListener("keydown", this.changeDirection)
@@ -113,11 +114,12 @@
         },
 
         main() {
+            clearTimeout(this.timeout)
             if (this.didGameEnd()) {
                 this.gameOver = true;
                 return;
             }
-            setTimeout(() => {
+            this.timeout = setTimeout(() => {
                 this.changingDirection = false;
                 this.clearCanvas();
                 this.drawFood();
@@ -196,7 +198,6 @@
             this.foodX = this.randomTen(0, this.gameCanvas.width - 10);
             this.foodY = this.randomTen(0, this.gameCanvas.height - 10);
             this.snake.forEach((part) => {
-                console.log(this.foodX)
                 const foodIsOnSnake = part.x == this.foodX && part.y == this.foodY
                 if (foodIsOnSnake)
                 this.createFood();
@@ -218,11 +219,11 @@
             }
             const hitLeftWall = this.snake[0].x < 0;
             const hitRightWall = this.snake[0].x > this.gameCanvas.width - 10;
-            const hitToptWall = this.snake[0].y < 0;
+            const hitTopWall = this.snake[0].y < 0;
             const hitBottomWall = this.snake[0].y > this.gameCanvas.height - 10;
             return hitLeftWall || 
                     hitRightWall || 
-                    hitToptWall ||
+                    hitTopWall ||
                     hitBottomWall
         }
 
