@@ -26,6 +26,9 @@
         About Me
       </v-btn>
       <v-spacer></v-spacer>
+      <v-btn icon @click="goToBookRatings()" target="_blank">
+        <v-icon color="black">mdi-book-outline</v-icon>
+      </v-btn>
       <v-btn icon href="https://github.com/Sarens24" target="_blank">
         <v-icon color="black">mdi-github</v-icon>
       </v-btn>
@@ -41,6 +44,7 @@
 </template>
 
 <script>
+import store from './store/index'
 
 export default {
   name: 'App',
@@ -48,6 +52,18 @@ export default {
   data: () => ({
     //
   }),
+
+ beforeMount() {
+    store.dispatch('getUser')
+    // store.dispatch('getBooks')
+
+  },
+
+  computed: {
+    user() {
+      return store.getters.userInfo
+    }
+  },
 
   methods: {
     goToHome() {
@@ -58,6 +74,9 @@ export default {
     },
     goToAboutMe() {
       this.$router.push('/aboutMe');
+    },
+    goToBookRatings() {
+      this.$router.push('/bookratings');
     }
   }
 };

@@ -13,11 +13,15 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.1",
+    "node": "^20.2.0",
     "node-polyfill-webpack-plugin": "^2.0.0",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
-    "vuetify": "^2.6.0"
+    "vuetify": "^2.6.0",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~5.0.0",

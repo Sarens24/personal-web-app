@@ -7,6 +7,7 @@ import AspenSpas from '../views/AspenSpasView.vue'
 import SnakeGame from '../views/snakeGame/SnakeGameView.vue'
 import WikiGenerator from '../views/WikiGeneratorView.vue'
 import AboutMe from '../views/AboutMeView.vue'
+import BookRatings from '../views/BookRatings.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,10 @@ const routes = [
   {
     path: '/wikiGenerator',
     component: WikiGenerator
+  },
+  {
+    path: '/bookratings',
+    component: BookRatings
   },
   {
     path: '/aboutMe',
