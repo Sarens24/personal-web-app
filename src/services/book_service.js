@@ -40,7 +40,8 @@ async function addBook(book) {
             "author": book.author,
             "genre": book.genre,
             "rating": book.rating,
-            "notes": book.notes
+            "notes": book.notes,
+            "reader": book.reader
         }
     });
                 

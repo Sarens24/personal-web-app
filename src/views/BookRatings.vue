@@ -66,9 +66,12 @@
                     </v-btn>
                 </template>
             </v-data-table>
-            <v-dialog v-model="notesDialog" max-width="500px">
+            <v-dialog v-model="notesDialog" max-width="50%">
                 <v-card>
                     <v-card-title class="text-h5">{{ selectedBook.title }}</v-card-title>
+                    <v-card-subtitle>
+                        Reader: {{ selectedBook.reader }}
+                    </v-card-subtitle>
                     <v-card-text>
                         {{ selectedBook.notes }}
                     </v-card-text>
@@ -101,6 +104,11 @@
                         <v-text-field
                             v-model="addedBook.rating"
                             label="Rating"
+                            required
+                        ></v-text-field>
+                        <v-text-field
+                            v-model="addedBook.reader"
+                            label="Reader"
                             required
                         ></v-text-field>
                         <v-textarea
@@ -213,7 +221,9 @@
 
             newBook() {
                 addBook(this.addedBook)
-                this.selectedBook = {}
+                store.dispatch('getBookList', this.user.access_token)
+                this.addedBook = {}
+
             },
 
             getList() {

@@ -1,6 +1,7 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
 import { auth } from '../services/user_service'
+import { getAll } from '../services/book_service'
 
 Vue.use(Vuex)
 
@@ -34,6 +35,14 @@ export default new Vuex.Store({
         getUser(context) {
             return new Promise((resolve, reject) => {
                 auth().then((data) => {
+                    resolve()
+                })
+            })
+        },
+
+        getBookList(context, token) {
+            return new Promise((resolve, reject) => {
+                getAll(token).then((data) => {
                     resolve()
                 })
             })
