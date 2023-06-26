@@ -10,6 +10,7 @@ on:
       - master
 env:
   VUE_APP_API_KEY: ${{ secrets.API_KEY }}
+  VUE_APP_DB_KEY: ${{ secrets.DB_KEY }}
 
 jobs:
   build_and_deploy_job:
